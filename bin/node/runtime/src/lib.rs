@@ -109,7 +109,7 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
 	// and set impl_version to 0. If only runtime
 	// implementation changes and behavior does not, then leave spec_version as
 	// is and increment impl_version.
-	spec_version: 201,
+	spec_version: 202,
 	impl_version: 1,
 	apis: RUNTIME_API_VERSIONS,
 	transaction_version: 1,
@@ -323,7 +323,7 @@ impl pallet_babe::Trait for Runtime {
 }
 
 parameter_types! {
-	pub const IndexDeposit: Balance = 1 * DOLLARS;
+	pub const IndexDeposit: Balance = 10000 * DOLLARS;
 }
 
 impl pallet_indices::Trait for Runtime {
@@ -477,11 +477,11 @@ parameter_types! {
 	pub const VotingPeriod: BlockNumber = 28 * 24 * 60 * MINUTES;
 	pub const FastTrackVotingPeriod: BlockNumber = 3 * 24 * 60 * MINUTES;
 	pub const InstantAllowed: bool = true;
-	pub const MinimumDeposit: Balance = 100 * DOLLARS;
+	pub const MinimumDeposit: Balance = 1000000 * DOLLARS;
 	pub const EnactmentPeriod: BlockNumber = 30 * 24 * 60 * MINUTES;
 	pub const CooloffPeriod: BlockNumber = 28 * 24 * 60 * MINUTES;
 	// One cent: $10,000 / MB
-	pub const PreimageByteDeposit: Balance = 1 * CENTS;
+	pub const PreimageByteDeposit: Balance = 10000 * CENTS;
 	pub const MaxVotes: u32 = 100;
 }
 
@@ -540,8 +540,8 @@ impl pallet_collective::Trait<CouncilCollective> for Runtime {
 }
 
 parameter_types! {
-	pub const CandidacyBond: Balance = 10 * DOLLARS;
-	pub const VotingBond: Balance = 1 * DOLLARS;
+	pub const CandidacyBond: Balance = 1000000 * DOLLARS;
+	pub const VotingBond: Balance = 10000 * DOLLARS;
 	pub const TermDuration: BlockNumber = 7 * DAYS;
 	pub const DesiredMembers: u32 = 13;
 	pub const DesiredRunnersUp: u32 = 7;
@@ -607,20 +607,20 @@ impl pallet_membership::Trait<pallet_membership::Instance1> for Runtime {
 
 parameter_types! {
 	pub const ProposalBond: Permill = Permill::from_percent(5);
-	pub const ProposalBondMinimum: Balance = 1 * DOLLARS;
+	pub const ProposalBondMinimum: Balance = 1000000 * DOLLARS;
 	pub const SpendPeriod: BlockNumber = 1 * DAYS;
 	pub const Burn: Permill = Permill::from_percent(50);
 	pub const TipCountdown: BlockNumber = 1 * DAYS;
 	pub const TipFindersFee: Percent = Percent::from_percent(20);
-	pub const TipReportDepositBase: Balance = 1 * DOLLARS;
-	pub const DataDepositPerByte: Balance = 1 * CENTS;
-	pub const BountyDepositBase: Balance = 1 * DOLLARS;
+	pub const TipReportDepositBase: Balance = 10000 * DOLLARS;
+	pub const DataDepositPerByte: Balance = 10000 * CENTS;
+	pub const BountyDepositBase: Balance = 10000 * DOLLARS;
 	pub const BountyDepositPayoutDelay: BlockNumber = 1 * DAYS;
 	pub const TreasuryModuleId: ModuleId = ModuleId(*b"py/trsry");
 	pub const BountyUpdatePeriod: BlockNumber = 14 * DAYS;
 	pub const MaximumReasonLength: u32 = 16384;
 	pub const BountyCuratorDeposit: Permill = Permill::from_percent(50);
-	pub const BountyValueMinimum: Balance = 5 * DOLLARS;
+	pub const BountyValueMinimum: Balance = 50000 * DOLLARS;
 }
 
 impl pallet_treasury::Trait for Runtime {
@@ -658,10 +658,10 @@ impl pallet_treasury::Trait for Runtime {
 }
 
 parameter_types! {
-	pub const TombstoneDeposit: Balance = 16 * MILLICENTS;
-	pub const RentByteFee: Balance = 4 * MILLICENTS;
-	pub const RentDepositOffset: Balance = 1000 * MILLICENTS;
-	pub const SurchargeReward: Balance = 150 * MILLICENTS;
+	pub const TombstoneDeposit: Balance = 160000 * MILLICENTS;
+	pub const RentByteFee: Balance = 40000 * MILLICENTS;
+	pub const RentDepositOffset: Balance = 10000000 * MILLICENTS;
+	pub const SurchargeReward: Balance = 1500000 * MILLICENTS;
 }
 
 impl pallet_contracts::Trait for Runtime {
@@ -807,9 +807,9 @@ impl pallet_finality_tracker::Trait for Runtime {
 }
 
 parameter_types! {
-	pub const BasicDeposit: Balance = 10 * DOLLARS;       // 258 bytes on-chain
-	pub const FieldDeposit: Balance = 250 * CENTS;        // 66 bytes on-chain
-	pub const SubAccountDeposit: Balance = 2 * DOLLARS;   // 53 bytes on-chain
+	pub const BasicDeposit: Balance = 100000 * DOLLARS;       // 258 bytes on-chain
+	pub const FieldDeposit: Balance = 2500000 * CENTS;        // 66 bytes on-chain
+	pub const SubAccountDeposit: Balance = 20000 * DOLLARS;   // 53 bytes on-chain
 	pub const MaxSubAccounts: u32 = 100;
 	pub const MaxAdditionalFields: u32 = 100;
 	pub const MaxRegistrars: u32 = 20;
@@ -831,10 +831,10 @@ impl pallet_identity::Trait for Runtime {
 }
 
 parameter_types! {
-	pub const ConfigDepositBase: Balance = 5 * DOLLARS;
-	pub const FriendDepositFactor: Balance = 50 * CENTS;
+	pub const ConfigDepositBase: Balance = 50000 * DOLLARS;
+	pub const FriendDepositFactor: Balance = 500000 * CENTS;
 	pub const MaxFriends: u16 = 9;
-	pub const RecoveryDeposit: Balance = 5 * DOLLARS;
+	pub const RecoveryDeposit: Balance = 50000 * DOLLARS;
 }
 
 impl pallet_recovery::Trait for Runtime {
@@ -848,11 +848,11 @@ impl pallet_recovery::Trait for Runtime {
 }
 
 parameter_types! {
-	pub const CandidateDeposit: Balance = 10 * DOLLARS;
-	pub const WrongSideDeduction: Balance = 2 * DOLLARS;
+	pub const CandidateDeposit: Balance = 100000 * DOLLARS;
+	pub const WrongSideDeduction: Balance = 20000 * DOLLARS;
 	pub const MaxStrikes: u32 = 10;
 	pub const RotationPeriod: BlockNumber = 80 * HOURS;
-	pub const PeriodSpend: Balance = 500 * DOLLARS;
+	pub const PeriodSpend: Balance = 5000000 * DOLLARS;
 	pub const MaxLockDuration: BlockNumber = 36 * 30 * DAYS;
 	pub const ChallengePeriod: BlockNumber = 7 * DAYS;
 	pub const SocietyModuleId: ModuleId = ModuleId(*b"py/socie");
@@ -876,7 +876,7 @@ impl pallet_society::Trait for Runtime {
 }
 
 parameter_types! {
-	pub const MinVestedTransfer: Balance = 100 * DOLLARS;
+	pub const MinVestedTransfer: Balance = 1000000 * DOLLARS;
 }
 
 impl pallet_vesting::Trait for Runtime {

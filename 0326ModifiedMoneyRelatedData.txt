@@ -1,0 +1,27 @@
+PreimageByteDeposit = 1 c   CandidacyBond = 10 d  MinimumDeposit = 100 d   DesiredMembers = 13  DesiredRunnersUp = 7  proposalBondMinimum = 1d  BountyDepositBase = 1d
+10000c						1000000d             1000000					5					4					  1000000					10000
+
+calculated stroge fee
+
+
+
+以上为所写的修改，其它全为10000倍
+
+
+0.069								1play					10play														0.1play					0.1
+0.69							100dot						100dot														100dot					1dot
+													
+													
+													
+													
+													
+VotingBond  = 1 d			TipReportDepositBase = 1d    BountyValueMinimum 5D
+
+
+
+
+
+
+
+
+IndexDeposit 不明
