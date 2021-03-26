@@ -807,9 +807,9 @@ impl pallet_finality_tracker::Trait for Runtime {
 }
 
 parameter_types! {
-	pub const BasicDeposit: Balance = 100000 * DOLLARS;       // 258 bytes on-chain
-	pub const FieldDeposit: Balance = 2500000 * CENTS;        // 66 bytes on-chain
-	pub const SubAccountDeposit: Balance = 20000 * DOLLARS;   // 53 bytes on-chain
+	pub const BasicDeposit: Balance = 10000 * DOLLARS;       // 258 bytes on-chain
+	pub const FieldDeposit: Balance = 250000 * CENTS;        // 66 bytes on-chain
+	pub const SubAccountDeposit: Balance = 2000 * DOLLARS;   // 53 bytes on-chain
 	pub const MaxSubAccounts: u32 = 100;
 	pub const MaxAdditionalFields: u32 = 100;
 	pub const MaxRegistrars: u32 = 20;
