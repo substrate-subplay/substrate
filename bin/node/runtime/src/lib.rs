@@ -543,8 +543,8 @@ parameter_types! {
 	pub const CandidacyBond: Balance = 1000000 * DOLLARS;
 	pub const VotingBond: Balance = 10000 * DOLLARS;
 	pub const TermDuration: BlockNumber = 7 * DAYS;
-	pub const DesiredMembers: u32 = 13;
-	pub const DesiredRunnersUp: u32 = 7;
+	pub const DesiredMembers: u32 = 5;
+	pub const DesiredRunnersUp: u32 = 4;
 	pub const ElectionsPhragmenModuleId: LockIdentifier = *b"phrelect";
 }
 
